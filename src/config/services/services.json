@@ -1,0 +1,12 @@
+{
+  "security": {
+    "register": "{security}/auth/register",
+    "login": "{security}/auth/login"
+  },
+  "match": {
+    "create": "{api}/match/create",
+    "addPlayer": "{api}/match/add-player",
+    "notStarted": "{api}/match/not-started",
+    "findOne": "{api}/match/{0}"
+  }
+}

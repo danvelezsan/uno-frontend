@@ -1,0 +1,10 @@
+{
+  "user": {
+    "authToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9",
+    "email": "user@celerik.com",
+    "name": "Celerik Username",
+    "permissions": [
+      "Dashboard"
+    ]
+  }
+}

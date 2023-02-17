@@ -1,0 +1,27 @@
+{
+  "appName": "Flow OS",
+  "common": {
+    "error": "There's been an internal error"
+  },
+  "dashboardPage": {
+    "helloWorld": "Hello World!"
+  },
+  "loginPage": {
+    "login": "Login"
+  },
+  "mainMenu": {
+    "account": "Account",
+    "logout": "Log out",
+    "privacyPolicy": "Privacy Policy",
+    "menuItem1": "Menu Item 1",
+    "menuItem2": "Menu Item 2"
+  },
+  "notFoundPage": {
+    "content": "The resource you are looking for has been removed, had its name changed, or is temporarily unavailable."
+  },
+  "services": {
+    "security": {
+      "login": "User Login"
+    }
+  }
+}
