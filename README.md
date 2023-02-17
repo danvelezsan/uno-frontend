@@ -1,4 +1,4 @@
-# Celerik / React Boilerplate
+
 
 ## Installation
 
@@ -6,7 +6,7 @@
 Download and clone this repository using
 This project was developed
 ```
-git clone https://github.com/celerik/react-boilerplate
+git clone https://github.com/danvelezsan/uno-frontend
 ```
 Install dependencies with:
 ```
