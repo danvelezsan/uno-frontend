@@ -36,7 +36,6 @@ const MatchDetail = ({ classes, socket }) => {
 
     const isDeckClickable = isActualPlayerTurn && !tookCardInTurn;
     const isCardClickable = isActualPlayerTurn && !threwCardInTurn;
-    const isCardThrowable = isActualPlayerTurn && !threwCardInTurn;
 
     const translateColor = () => {
         const colors = {
@@ -70,14 +69,6 @@ const MatchDetail = ({ classes, socket }) => {
             setActualPlayer(userInMatch);
         }
     }, [actualMatch]);
-
-    useEffect(() => {
-        if (Object.keys(actualPlayer).length > 0) {
-            if (actualMatch?.started && isActualPlayerTurn && !tookCardInTurn && !threwCardInTurn && actualMatch?.actualEffect && !newMatchEffect) {
-                handleMatchEffect();
-            }
-        }
-    }, [actualPlayer]);
 
     useEffect(() => {
         if (tookCardInTurn && threwCardInTurn) {
@@ -149,6 +140,16 @@ const MatchDetail = ({ classes, socket }) => {
             }
         }
     };
+
+    useEffect(() => {
+        if (Object.keys(actualPlayer).length > 0) {
+            if (actualMatch?.started && isActualPlayerTurn && !tookCardInTurn && !threwCardInTurn && actualMatch?.actualEffect && !newMatchEffect) {
+                handleMatchEffect();
+            }
+        }
+    }, [actualPlayer]);
+
+    const getCardImage = (card) => `${process.env.PUBLIC_URL}/cards/${card?.cardType?.color}/${card?.cardType?.value}.png`;
 
     return (
         <>
@@ -261,7 +262,7 @@ const MatchDetail = ({ classes, socket }) => {
                                         <Grid item>
                                             <img
                                                 className={classes.card}
-                                                src={`${process.env.PUBLIC_URL}/cards/${visibleDeck[visibleDeck.length - 1].cardType.color}/${visibleDeck[visibleDeck.length - 1].cardType.value}.png`}
+                                                src={getCardImage(visibleDeck[visibleDeck.length - 1])}
                                                 alt=""
                                             />
                                         </Grid>
@@ -288,7 +289,7 @@ const MatchDetail = ({ classes, socket }) => {
                                 >
                                     <img
                                         className={isCardClickable ? classes.clickableCard : classes.unClickableCard}
-                                        src={`${process.env.PUBLIC_URL}/cards/${card.cardType.color}/${card.cardType.value}.png`}
+                                        src={getCardImage(card)}
                                         alt=""
                                     />
                                 </Box>
